@@ -12,10 +12,7 @@ type roundTripper struct {
 
 // New returns a [http.RoundTripper] that sets ua to the User-Agent header.
 func New(base http.RoundTripper, ua string) *roundTripper {
-	return &roundTripper{
-		base: base,
-		ua:   ua,
-	}
+	return &roundTripper{base: base, ua: ua}
 }
 
 // RoundTrip implements the [http.RoundTripper] interface.
