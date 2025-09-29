@@ -8,7 +8,7 @@ import (
 
 func Example() {
 	client := &http.Client{}
-	client.Transport = useragentrt.New(http.DefaultTransport, "MyAgent/1.0")
+	client.Transport = useragentrt.New(client.Transport, "MyAgent/1.0")
 	resp, _ := client.Get("https://example.com")
 	resp.Body.Close()
 }

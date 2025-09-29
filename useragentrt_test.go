@@ -20,7 +20,7 @@ func Test(t *testing.T) {
 	defer srv.Close()
 
 	client := &http.Client{}
-	client.Transport = useragentrt.New(http.DefaultTransport, "MyAgent/1.0")
+	client.Transport = useragentrt.New(client.Transport, "MyAgent/1.0")
 	resp, _ := client.Get(srv.URL)
 	resp.Body.Close()
 }
